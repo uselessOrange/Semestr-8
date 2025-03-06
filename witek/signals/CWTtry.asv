@@ -1,0 +1,36 @@
+% CTW computation without using FFT (convolution method)
+clear all;
+
+N = 300;                    % Sample point numbers
+t = linspace(0, 30, N);     % Time vector
+
+% Signal
+x = 5*sin(2*pi*0.5*t);      % Signal with frequency of 0.5 Hz
+
+% Continuous wavelet transform parameters
+fc = 1;                     % Center frequency of the wavelet
+fb = 15;                    % Bandwidth of the wavelet
+
+% Initialize the wavelet transform matrix
+c = zeros(N, 60);
+
+% Compute CTW using convolution method
+for s = 1:60   % Scale vector s = [1:1:60]
+    for i = 1:N      % Number of discrete times
+        %for now just complex morlet wavelet
+        PSI = ((pi*fb)^(-0.5)).*exp(2*pi*i*fc.*(t/s)).*exp(-(t/s).^2/fb);   
+        for k = 1:i 
+            if ((i-k+1) < N+1) && (k < N+1)
+                c(i, s) = c(i, s) + x(k) * PSI(i-k+1);
+            end
+        end
+    end
+end
+
+% Plot the CTW coefficients
+figure;
+contourf(1:60, t, abs(c'), 'LineStyle', 'none');
+colorbar;
+xlabel('Scale');
+ylabel('Time');
+title('Continuous Time Wavelet Transform (CTW)');
