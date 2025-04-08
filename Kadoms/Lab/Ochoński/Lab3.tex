@@ -1,0 +1,685 @@
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and export to LaTeX again.
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{epstopdf}
+\usepackage[table]{xcolor}
+\usepackage{matlab}
+\usepackage[paperheight=795pt,paperwidth=614pt,top=72pt,bottom=72pt,right=72pt,left=72pt,heightrounded]{geometry}
+
+\sloppy
+\epstopdfsetup{outdir=./}
+\graphicspath{ {./Lab3_media/} }
+
+\begin{document}
+
+\begin{par}
+\begin{flushleft}
+Algorythm:
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Foreward kinematics, for random joint and links valiues calculate the foreward kinematics:
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+for i = 1:10
+algo_lab3
+end
+\end{matlabcode}
+\begin{matlaboutput}
+ 
+ 
+-------New System!---------
+d1_val = 0.7920
+a1_val = 0.2004
+th2_val = 1.1372
+a2_val = 0.6939
+th3_val = 0.0453
+d3_val = 0.2769
+th4_val = 0.5531
+d4_val = 0.1929
+ 
+T04_val = 4x4
+    0.3222   -0.1989   -0.9256    0.0572
+    0.7876   -0.4862    0.3786    0.8075
+   -0.5253   -0.8509         0    0.7920
+         0         0         0    1.0000
+
+T03 = 4x4
+    0.3786         0   -0.9256    0.2357
+    0.9256         0    0.3786    0.7345
+         0   -1.0000         0    0.7920
+         0         0         0    1.0000
+
+P = 3x1
+    0.0572
+    0.8075
+    0.7920
+
+pw = 3x1
+   -0.1785
+    0.0730
+         0
+
+pa = 3x1
+    0.2357
+    0.7345
+    0.7920
+
+ 
+ans_s = struct with fields:
+    q1: [2x1 sym]
+    q2: [2x1 sym]
+    q3: [2x1 sym]
+
+q1_ik = 0.7920
+d1_val = 0.7920
+q2_ik = 1.1372
+th2_val = 1.1372
+q3_ik = 0.0453
+th3_val = 0.0453
+ 
+ans_2 = 2x1
+    0.5531
+   -0.5531
+
+th4_val = 0.5531
+ 
+ 
+-------New System!---------
+d1_val = 0.2799
+a1_val = 0.3442
+th2_val = 0.7813
+a2_val = 0.5954
+th3_val = 0.9109
+d3_val = 0.1637
+th4_val = 0.2140
+d4_val = 0.1540
+ 
+T04_val = 4x4
+   -0.1184    0.0257   -0.9926    0.4515
+    0.9700   -0.2108   -0.1212    0.3808
+   -0.2124   -0.9772         0    0.2799
+         0         0         0    1.0000
+
+T03 = 4x4
+   -0.1212         0   -0.9926    0.6044
+    0.9926         0   -0.1212    0.3994
+         0   -1.0000         0    0.2799
+         0         0         0    1.0000
+
+P = 3x1
+    0.4515
+    0.3808
+    0.2799
+
+pw = 3x1
+   -0.1528
+   -0.0187
+         0
+
+pa = 3x1
+    0.6044
+    0.3994
+    0.2799
+
+ 
+ans_s = struct with fields:
+    q1: [2x1 sym]
+    q2: [2x1 sym]
+    q3: [2x1 sym]
+
+q1_ik = 0.2799
+d1_val = 0.2799
+q2_ik = 0.7813
+th2_val = 0.7813
+q3_ik = 0.9109
+th3_val = 0.9109
+ 
+ans_2 = 2x1
+    0.2140
+   -0.2140
+
+th4_val = 0.2140
+ 
+ 
+-------New System!---------
+d1_val = 0.2005
+a1_val = 0.1818
+th2_val = 0.5613
+a2_val = 0.3971
+th3_val = -0.9748
+d3_val = 0.1990
+th4_val = -2.2141
+d4_val = 0.1330
+ 
+T04_val = 4x4
+   -0.5493    0.7326    0.4019    0.6514
+    0.2411   -0.3215    0.9157    0.5154
+    0.8001    0.5999         0    0.2005
+         0         0         0    1.0000
+
+T03 = 4x4
+    0.9157         0    0.4019    0.5979
+   -0.4019         0    0.9157    0.3936
+         0   -1.0000         0    0.2005
+         0         0         0    1.0000
+
+P = 3x1
+    0.6514
+    0.5154
+    0.2005
+
+pw = 3x1
+    0.0534
+    0.1218
+         0
+
+pa = 3x1
+    0.5979
+    0.3936
+    0.2005
+
+ 
+ans_s = struct with fields:
+    q1: [2x1 sym]
+    q2: [2x1 sym]
+    q3: [2x1 sym]
+
+q1_ik = 0.2005
+d1_val = 0.2005
+q2_ik = 0.5613
+th2_val = 0.5613
+q3_ik = -0.9748
+th3_val = -0.9748
+ 
+ans_2 = 2x1
+    2.2141
+    4.0690
+
+th4_val = -2.2141
+ 
+ 
+-------New System!---------
+d1_val = 0.8656
+a1_val = 0.4363
+th2_val = 1.3497
+a2_val = 0.5180
+th3_val = 0.2601
+d3_val = 0.2631
+th4_val = 2.3814
+d4_val = 0.6933
+ 
+T04_val = 4x4
+    0.0282    0.0268   -0.9992   -0.4057
+   -0.7242   -0.6885   -0.0389    0.4681
+   -0.6891    0.7247         0    0.8656
+         0         0         0    1.0000
+
+T03 = 4x4
+   -0.0389         0   -0.9992    0.2871
+    0.9992         0   -0.0389    0.4951
+         0   -1.0000         0    0.8656
+         0         0         0    1.0000
+
+P = 3x1
+   -0.4057
+    0.4681
+    0.8656
+
+pw = 3x1
+   -0.6928
+   -0.0270
+         0
+
+pa = 3x1
+    0.2871
+    0.4951
+    0.8656
+
+ 
+ans_s = struct with fields:
+    q1: [2x1 sym]
+    q2: [2x1 sym]
+    q3: [2x1 sym]
+
+q1_ik = 0.8656
+d1_val = 0.8656
+q2_ik = 1.3497
+th2_val = 1.3497
+q3_ik = 0.2601
+th3_val = 0.2601
+ 
+ans_2 = 2x1
+    3.9018
+    2.3814
+
+th4_val = 2.3814
+ 
+ 
+-------New System!---------
+d1_val = 0.1005
+a1_val = 0.6193
+th2_val = 0.3536
+a2_val = 0.6940
+th3_val = 0.0870
+d3_val = 0.1959
+th4_val = 1.8934
+d4_val = 0.2367
+ 
+T04_val = 4x4
+   -0.2868   -0.8578   -0.4265    1.0858
+   -0.1352   -0.4045    0.9045    0.6316
+   -0.9484    0.3171         0    0.1005
+         0         0         0    1.0000
+
+T03 = 4x4
+    0.9045         0   -0.4265    1.1867
+    0.4265         0    0.9045    0.4175
+         0   -1.0000         0    0.1005
+         0         0         0    1.0000
+
+P = 3x1
+    1.0858
+    0.6316
+    0.1005
+
+pw = 3x1
+   -0.1010
+    0.2141
+         0
+
+pa = 3x1
+    1.1867
+    0.4175
+    0.1005
+
+ 
+ans_s = struct with fields:
+    q1: [2x1 sym]
+    q2: [2x1 sym]
+    q3: [2x1 sym]
+
+q1_ik = 0.1005
+d1_val = 0.1005
+q2_ik = 0.3536
+th2_val = 0.3536
+q3_ik = 0.0870
+th3_val = 0.0870
+ 
+ans_2 = 2x1
+    4.3898
+    1.8934
+
+th4_val = 1.8934
+ 
+ 
+-------New System!---------
+d1_val = 0.5483
+a1_val = 0.6405
+th2_val = 0.2346
+a2_val = 0.6071
+th3_val = 0.7497
+d3_val = 0.2172
+th4_val = -1.5913
+d4_val = 0.4998
+ 
+T04_val = 4x4
+   -0.0114    0.5534   -0.8329    0.6338
+   -0.0171    0.8327    0.5535    0.5380
+    0.9998    0.0205         0    0.5483
+         0         0         0    1.0000
+
+T03 = 4x4
+    0.5535         0   -0.8329    1.0501
+    0.8329         0    0.5535    0.2613
+         0   -1.0000         0    0.5483
+         0         0         0    1.0000
+
+P = 3x1
+    0.6338
+    0.5380
+    0.5483
+
+pw = 3x1
+   -0.4163
+    0.2767
+         0
+
+pa = 3x1
+    1.0501
+    0.2613
+    0.5483
+
+ 
+ans_s = struct with fields:
+    q1: [2x1 sym]
+    q2: [2x1 sym]
+    q3: [2x1 sym]
+
+q1_ik = 0.5483
+d1_val = 0.5483
+q2_ik = 0.2346
+th2_val = 0.2346
+q3_ik = 0.7497
+th3_val = 0.7497
+ 
+ans_2 = 2x1
+    1.5913
+    4.6919
+
+th4_val = -1.5913
+ 
+ 
+-------New System!---------
+d1_val = 0.1751
+a1_val = 0.4756
+th2_val = 0.5056
+a2_val = 0.5379
+th3_val = 1.2276
+d3_val = 0.2965
+th4_val = 1.6904
+d4_val = 0.4489
+ 
+T04_val = 4x4
+    0.0193    0.1605   -0.9868    0.2106
+   -0.1177   -0.9798   -0.1617    0.1400
+   -0.9929    0.1193         0    0.1751
+         0         0         0    1.0000
+
+T03 = 4x4
+   -0.1617         0   -0.9868    0.6536
+    0.9868         0   -0.1617    0.2126
+         0   -1.0000         0    0.1751
+         0         0         0    1.0000
+
+P = 3x1
+    0.2106
+    0.1400
+    0.1751
+
+pw = 3x1
+   -0.4430
+   -0.0726
+         0
+
+pa = 3x1
+    0.6536
+    0.2126
+    0.1751
+
+ 
+ans_s = struct with fields:
+    q1: [2x1 sym]
+    q2: [2x1 sym]
+    q3: [2x1 sym]
+
+q1_ik = 0.1751
+d1_val = 0.1751
+q2_ik = 0.5056
+th2_val = 0.5056
+q3_ik = 1.2276
+th3_val = 1.2276
+ 
+ans_2 = 2x1
+    1.6904
+    4.5928
+
+th4_val = 1.6904
+ 
+ 
+-------New System!---------
+d1_val = 0.9355
+a1_val = 0.4481
+th2_val = -1.5174
+a2_val = 0.1725
+th3_val = 1.1395
+d3_val = 0.1969
+th4_val = 2.1668
+d4_val = 0.2256
+ 
+T04_val = 4x4
+   -0.5217   -0.7692    0.3690    0.6132
+    0.2071    0.3054    0.9294    0.2204
+   -0.8276    0.5613         0    0.9355
+         0         0         0    1.0000
+
+T03 = 4x4
+    0.9294         0    0.3690    0.5299
+   -0.3690         0    0.9294    0.0107
+         0   -1.0000         0    0.9355
+         0         0         0    1.0000
+
+P = 3x1
+    0.6132
+    0.2204
+    0.9355
+
+pw = 3x1
+    0.0833
+    0.2097
+         0
+
+pa = 3x1
+    0.5299
+    0.0107
+    0.9355
+
+ 
+ans_s = struct with fields:
+    q1: [2x1 sym]
+    q2: [2x1 sym]
+    q3: [2x1 sym]
+
+q1_ik = 0.9355
+d1_val = 0.9355
+q2_ik = -1.5174
+th2_val = -1.5174
+q3_ik = 1.1395
+th3_val = 1.1395
+ 
+ans_2 = 2x1
+    4.1164
+    2.1668
+
+th4_val = 2.1668
+ 
+ 
+-------New System!---------
+d1_val = 0.5971
+a1_val = 0.4779
+th2_val = -1.4703
+a2_val = 0.4688
+th3_val = -0.4322
+d3_val = 0.1099
+th4_val = -0.0655
+d4_val = 0.2155
+ 
+T04_val = 4x4
+   -0.3250   -0.0213    0.9455    0.8326
+   -0.9434   -0.0619   -0.3257   -0.5724
+    0.0655   -0.9979         0    0.5971
+         0         0         0    1.0000
+
+T03 = 4x4
+   -0.3257         0    0.9455    0.6289
+   -0.9455         0   -0.3257   -0.5023
+         0   -1.0000         0    0.5971
+         0         0         0    1.0000
+
+P = 
+    0.8326
+   -0.5724
+    0.5971
+
+pw = 
+    0.2038
+   -0.0702
+         0
+
+pa = 
+    0.6289
+   -0.5023
+    0.5971
+
+ 
+ans_s = struct with fields:
+    q1: [2x1 sym]
+    q2: [2x1 sym]
+    q3: [2x1 sym]
+
+q1_ik = 0.5971
+d1_val = 0.5971
+q2_ik = -1.4703
+th2_val = -1.4703
+q3_ik = -0.4322
+th3_val = -0.4322
+ 
+ans_2 = 
+    0.0655
+   -0.0655
+
+th4_val = -0.0655
+ 
+ 
+-------New System!---------
+d1_val = 0.2108
+a1_val = 0.2233
+th2_val = -1.1105
+a2_val = 0.2134
+th3_val = -1.4368
+d3_val = 0.2270
+th4_val = -1.3706
+d4_val = 0.4232
+ 
+T04_val = 
+   -0.1648   -0.8120    0.5599    0.6822
+   -0.1114   -0.5487   -0.8285   -0.7299
+    0.9800   -0.1989         0    0.2108
+         0         0         0    1.0000
+
+T03 = 
+   -0.8285         0    0.5599    0.4452
+   -0.5599         0   -0.8285   -0.3793
+         0   -1.0000         0    0.2108
+         0         0         0    1.0000
+
+P = 
+    0.6822
+   -0.7299
+    0.2108
+
+pw = 
+    0.2369
+   -0.3506
+         0
+
+pa = 
+    0.4452
+   -0.3793
+    0.2108
+
+ 
+ans_s = struct with fields:
+    q1: [2x1 sym]
+    q2: [2x1 sym]
+    q3: [2x1 sym]
+
+q1_ik = 0.2108
+d1_val = 0.2108
+q2_ik = -1.1105
+th2_val = -1.1105
+q3_ik = -1.4368
+th3_val = -1.4368
+ 
+ans_2 = 
+   -1.3706
+    1.3706
+
+th4_val = -1.3706
+\end{matlaboutput}
+
+
+\begin{matlabcode}
+function algo_lab3
+% this script determines a Homogeneous Transformation matrix
+clear 
+disp(' ')
+disp(" ")
+disp('-------New System!---------')
+d1_val=random('Uniform',0.1,1)
+a1_val=random('Uniform',0.1,0.7)
+th2_val=random('Uniform',-pi/2,pi/2)
+a2_val=random('Uniform',0.1,0.7)
+th3_val=random("Uniform",-pi/2,pi/2)
+d3_val=random('Uniform',0.1,0.3)
+th4_val=random('Uniform',-pi,pi)
+d4_val=random('Uniform',0.1,0.7)
+disp(" ")
+A1=mA(0,d1_val,a1_val,0);
+A2=mA(th2_val,0,a2_val,0);
+A3=mA(th3_val,0,0,sym(-pi/2));
+A32=mA(0,d3_val,0,0);
+A4=mA(th4_val,d4_val,0,0);
+
+T04_val=double(A1*A2*A3*A32*A4)
+
+T03=double(A1*A2*A3*A32)
+
+P=T04_val(1:3,4)    
+pw=T04_val(1:3,3)*d4_val
+
+
+pa=P-pw %same as T03u
+
+
+% 
+% T04n=subs(T04,{d1,a1,th2,a2,th3,d3,th4,d4},{d1_val,a1_val,th2_val,a2_val, ...
+%     th3_val,d3_val,d3_val,th4_val,d4_val})
+%% 
+syms d1 a1 th2 a2 th3 th4 d3 d4 q1 q2 q3 q4 real
+
+A1=mA(0,d1,a1,0);
+A2=mA(th2,0,a2,0);
+A3=mA(th3,0,0,sym(-pi/2));
+A32=mA(0,d3,0,0);
+A4=mA(th4,d4,0,0);
+T03=A1*A2*A3*A32;
+T03v=subs(T03,{d1,a1,th2,a2,th3,d3},{q1,a1_val,q2,a2_val,q3,d3_val});
+disp(" ")
+eq = pa==(T03v(1:3,4));
+ans_s=(solve(eq,[q1,q2,q3]))
+q1_ik=double(ans_s.q1(1))
+d1_val
+q2_ik=double(ans_s.q2(1))
+th2_val
+q3_ik=double(ans_s.q3(1))
+th3_val
+
+T04=A1*A2*A3*A32*A4;
+T04v=subs(T04,{d1,a1,th2,a2,th3,d3,th4,d4},{d1_val,a1_val,th2_val,a2_val,th3_val,d3_val,q4,d4_val});
+eq2 = T04_val(3,2)==(T04v(3,2));
+disp(" ")
+
+ans_2=double(solve(eq2,q4))
+th4_val
+end
+
+
+
+\end{matlabcode}
+
+\end{document}
