@@ -1,0 +1,41 @@
+### **Romberg Integration (Conceptual Explanation)**  
+
+Romberg Integration is a **numerical method** for approximating the integral of a function over a given interval. It starts with the **trapezoidal rule**, which estimates the integral by breaking the interval into equally spaced segments and summing the areas of the resulting trapezoids. However, the trapezoidal rule alone is not highly accurate.  
+
+To improve accuracy, **Romberg integration systematically refines the estimate** by:
+1. **Increasing the number of segments**: It first applies the trapezoidal rule with a small number of segments (e.g., 1 or 2), then repeatedly **doubles** the number of segments in each step. This makes the integral estimate more precise.
+2. **Richardson Extrapolation**: After calculating the integral for different segment sizes, Romberg Integration **combines multiple estimates** using a mathematical formula that eliminates error terms. This improves accuracy much faster than just adding more segments.
+
+The process continues iteratively until:
+- The error between successive estimates is below a given tolerance.
+- The maximum number of iterations is reached.  
+
+By **combining multiple trapezoidal rule approximations** and using Richardson extrapolation, Romberg integration **rapidly converges** to an accurate integral estimate.
+
+---
+
+### **Adaptive Quadrature (Conceptual Explanation)**  
+
+Adaptive Quadrature is another **numerical integration method**, but instead of refining a fixed set of intervals (like Romberg), it **adapts dynamically** based on the function’s behavior.  
+
+1. It begins by using **Simpson’s rule**, which approximates the integral using parabolic curves instead of straight lines (trapezoidal rule). Simpson’s rule generally provides better accuracy for smooth functions.
+2. The interval is then **divided into smaller subintervals**, and the integral is recalculated for each subinterval.
+3. The method **compares two integral estimates**:
+   - A rougher estimate (using fewer subintervals).
+   - A refined estimate (using more subintervals).
+4. **Error Check**: If the difference between the two estimates is **small enough**, the refined estimate is accepted.
+5. If the error is **too large**, the method **recursively subdivides** the interval and repeats the process.
+
+This way, Adaptive Quadrature automatically focuses more effort on areas where the function changes rapidly and requires **more precision**, while using fewer computations in smooth regions.
+
+### **Key Differences Between Romberg and Adaptive Quadrature**  
+| Feature               | Romberg Integration                           | Adaptive Quadrature |
+|---------              |--------------------                           |--------------------|
+| **How it refines**    | Increases number of segments systematically   | Subdivides only where needed |
+| **Main technique**    | Uses the trapezoidal rule with extrapolation  | Uses Simpson’s rule recursively |
+| **Efficiency**        | Works best for smooth functions               | Adapts to sharp changes efficiently |
+| **Computation style** | Predefined number of steps                    | Dynamic recursion |
+
+In summary:  
+- **Romberg** is structured and systematic, refining all intervals equally.  
+- **Adaptive Quadrature** is flexible and only refines where necessary, making it more efficient for complex functions.

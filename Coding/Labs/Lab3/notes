@@ -1,0 +1,100 @@
+
+Pseudocode for Romberg integration that uses the equal-size-segment version of the trapezoidal rule
+from
+
+FUNCTION TrapEq(n,a,b)
+    h=(b-a)/n
+    x=a
+    sum=f(x)
+    DOFOR i=1,n-1
+        x=x+h
+        sum=sum+2*f(x)
+    END DO
+    sum = sum+f(b)
+    TrapEq=(b-a)*sum/(2*n)
+END TrapEq
+
+
+
+
+FUNCTION Romberg (a, b, maxit, es) 
+	LOCAL I(10, 10) 
+    n = 1 
+    I11 = TrapEq(n, a, b) 
+    iter = 0 
+    DO 
+        iter = iter + 1 
+        n = 2^iter 
+        Iiter+1,1 = TrapEq(n, a, b) 
+        DOFOR K = 2, iter + 1 
+            j = 2 + iter - k 
+            Ijk (4^(k-1) * Ij+1.k-1 Ij.k-1)/(4k-1-1) 
+        END DO 
+        ea = ABS((I1,iter+1 - I2,iter) / I1,iter+1) * 100 
+        IF (iter >= maxit OR ea <= es) EXIT 
+    END DO 
+    Romberg + I1,iter+1 
+END Romberg 
+
+
+to approximate the
+integral of f(x) = 0.2 + 25x − 200x2 + 675x3 − 900x4 + 400x5 from x = 0 to 0.8
+
+
+
+
+FUNCTION quadapt(a,b)
+    tol = 0.000001
+    c=(a+b)/2
+    fa=f(a)
+    fc=f(c)
+    fb=f(b)
+    quadapt =qstep(a,b,tol,fa,fc,fb)
+END quadapt
+
+FUNCTION qstep(a,b,tol,fa,fc,fb)
+    h1=b-a
+    h2=h1/2
+    c=(a+b)/2
+    fd=f((a+c)/2)
+    fe=f((c+b)/2)
+    I1=h1/6*(fa + 4 * fc + fb)       %(Simpson’s 1/3 rule)
+    I2 = h2/6 * (fa + 4 * fd + 2 * fc + 4 * fe + fb)
+    IF |I2 - I1| <= tol THEN
+        I = I2 + (I2 - I1)/15
+    ELSE
+        Ia = qstep(a, c, tol, fa, fd, fc)
+        Ib = qstep(c, b, tol, fc, fe, fb)
+        I = Ia + Ib
+    END IF
+    qstep = I
+    END qstep
+
+
+
+FIGURE 21.6
+Graphical depiction of the use of a single application of the trapezoidal rule to approximate the
+integral of f(x) = 0.2 + 25x − 200x2 + 675x3 − 900x4 + 400x5 from x = 0 to 0.8.
+
+To do so:
+ Create a new method with the name “creatingSample,” which, as input, has the
+integration width h and the integration interval [a, b].
+ The function to be integrated is described in Figure 21.6.
+ Given two previous points, generate a vector by evaluating, in the objective function, the
+discretized range of values of x = a, a+h, a+2h, …, b. Please always select h in such a
+way as to get decimal integers consistently.
+ Save the vector created in a txt or JSON file, which will be used later. Please pay
+attention to how the vector is saved (the format).
+ Then, create a new method with the name “loadingSample,” which, as input, has the
+vector that you created and saved before. Please pay attention to how the information is
+loaded correctly. In this method, please implement the instruction “try-catch.” Also, test
+the function and add competent error handling.
+ Then, implement a new method with two functions (“RombergIntegration” and
+“AdaptiveQuadrature”) that can estimate the area under the function, which is possible
+thanks to the vector loaded, and give it back as output (estimated value, error,
+performing time).
+ Please, use the example in Figure 21.6 to test the implementation.
+
+Note that, usually, Java has built-in functions. In our case, you can use the built function for
+comparison and error check; however, the main target is implementing the methods.
+
